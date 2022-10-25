@@ -5,16 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/this_layout_will_fil_all_space_except_the_bottom_layout_space"
+        android:layout_width="wrap_content"
+        android:layout_height="200sp"
+        android:layout_weight="0"
+        android:background="">
 
-    <ImageView
-        android:id="@+id/imageView2"
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="200sp"
+            android:contentDescription="house"
+            app:srcCompat="@drawable/pexels_binyamin_mellish_106399" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/secondlayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="house"
-        app:srcCompat="@drawable/pexels_binyamin_mellish_106399" />
+        android:orientation="horizontal"
+        android:background=""
+        android:layout_weight="0">
+
+
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/perioxh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
@@ -24,52 +42,207 @@
         android:textStyle="bold"
    />
 
-    <TextView
-        android:id="@+id/textView2"
+        <TextView
+        android:id="@+id/cm2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20sp"
-        android:layout_marginTop="5sp"
-        android:text="Θεσσαλονίκη"
- />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="19dp"
         android:text="Τ.Μ(cm2:"
         android:textSize="20sp"
         android:textStyle="bold"
  />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="6dp"
-        android:text="50τ.μ"
- />
+
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/orofos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="19dp"
         android:text="Όροφος:"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_marginStart="20sp"
  />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Τιμή:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="19dp"
+            android:id="@+id/timh"
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
+
+            />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/thridlayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="5sp"
-        android:text="1ος" />
+        android:orientation="horizontal"
+        android:background=""
+        android:layout_weight="0">
+        <TextView
+            android:id="@+id/perioxh_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="0sp"
+            android:text="Θεσσαλονίκη" />
+
+        <TextView
+            android:id="@+id/cm2_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40sp"
+            android:layout_marginTop="0sp"
+            android:text="50τ.μ"
+            />
+        <TextView
+            android:id="@+id/orofos_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80sp"
+            android:layout_marginTop="0sp"
+            android:text="1ος" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50sp"
+            android:layout_marginTop="0sp"
+            android:text="40.00$"
+            android:id="@+id/timh_value"
+
+        />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0"
+        android:id="@+id/fourthlayout">
+
+
+        <TextView
+            android:id="@+id/thermansi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Θέρμανση:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="60sp"
+
+
+        />
+        <TextView
+            android:id="@+id/etos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Έτος Κατασκευής:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="60sp"
+            android:layout_marginTop="60sp"
+
+
+            />
+
+
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:id="@+id/fifthlayout">
+
+        <TextView
+            android:id="@+id/thermansi_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="0sp"
+            android:text="Πετρέλαιο" />
+
+        <TextView
+            android:id="@+id/etos_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160sp"
+            android:layout_marginTop="0sp"
+            android:text="2000" />
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="0"
+        android:id="@+id/sixthlayout">
+
+        <TextView
+            android:id="@+id/dwmatia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Δωμάτια:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="20sp"
+            android:layout_marginTop="60sp"
+
+
+            />
+        <TextView
+            android:id="@+id/epikoinwnia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Επικοινωννία:"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="73sp"
+            android:layout_marginTop="60sp"
+
+
+            />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:id="@+id/seventhlayout">
+
+        <TextView
+            android:id="@+id/dwmatia_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60sp"
+            android:layout_marginTop="0sp"
+            android:text="4" />
+
+        <TextView
+            android:id="@+id/epikoinwnia_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140sp"
+            android:layout_marginTop="0sp"
+            android:text="6900000000" />
+
+
+
+    </LinearLayout>
 
 </LinearLayout>
