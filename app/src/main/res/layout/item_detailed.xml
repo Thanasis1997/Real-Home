@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@id/image_view"
-            android:text="test"
-            android:textSize="20sp"
+            android:text="Περιοχή"
+            android:textSize="17sp"
             android:textStyle="bold" />
 
         <TextView
@@ -33,7 +33,63 @@
             android:layout_toEndOf="@id/image_view"
             android:text="test1"
             android:textSize="15sp" />
+        <TextView
+            android:id="@+id/text10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_toEndOf="@id/text1"
+            android:text="test1"
+            android:layout_marginLeft="40sp"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/text11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_toEndOf="@id/text3"
+            android:text="test1"
+            android:layout_marginLeft="40sp"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/text12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_toEndOf="@id/text4"
+            android:text="test1"
+            android:layout_marginLeft="40sp"
+            android:textSize="15sp" />
 
+        <TextView
+            android:id="@+id/text3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Τ.Μ"
+            android:layout_toEndOf="@id/text1"
+            android:layout_marginLeft="40sp"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/text4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Τιμή"
+            android:layout_toEndOf="@id/text3"
+            android:layout_marginLeft="40sp"
+            android:textSize="17sp"
+
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/text5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Θέρμανση"
+            android:layout_toEndOf="@id/text4"
+            android:layout_marginLeft="40sp"
+            android:textSize="17sp"
+
+            android:textStyle="bold" />
 
 
     </RelativeLayout>
