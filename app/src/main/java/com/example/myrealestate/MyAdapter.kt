@@ -6,33 +6,47 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 
-class MyAdapter(val conteext: Context, val userlist: ResponseData): RecyclerView.Adapter<MyAdapter.ViewHolder> {
-    class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        var perioxh: TextView
-        var tm: TextView
-        var timh: TextView
-        var thermansh: TextView
+class MyAdapter(val context: Context, val userlist: List<ResponseData.Home>) :
+    RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
+    class ViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView) {
 
         init {
-            perioxh = itemView.findViewById(R.id.text2)
-            tm = itemView.findViewById(R.id.text10)
-            timh = itemView.findViewById(R.id.text11)
-            thermansh = itemView.findViewById(R.id.text12)
-
+            itemView.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
         }
+
+        var perioxh: TextView = itemView.findViewById(R.id.text2)
+        var tm: TextView = itemView.findViewById(R.id.text10)
+        var timh: TextView = itemView.findViewById(R.id.text11)
+        var thermansh: TextView = itemView.findViewById(R.id.text12)
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        var itemView = LayoutInflater.from(conteext).inflate(R.layout.item_detailed, parent, false)
-        return ViewHolder(itemView)
+        val itemView = LayoutInflater.from(context).inflate(R.layout.item_detailed, parent, false)
+        return ViewHolder(itemView, mListener)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
+        val home = userlist[position]
+        holder.perioxh.text = home.city
+        holder.tm.text = home.squaremeters.toString()
+        holder.timh.text = home.price.toString()
+        // holder.thermansh.text = ??
     }
 
     override fun getItemCount(): Int {
-
+        return userlist.size
     }
 }
