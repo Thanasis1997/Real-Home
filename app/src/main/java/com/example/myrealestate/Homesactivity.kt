@@ -17,8 +17,10 @@ import com.example.myrealestate.databinding.ActivityMainBinding
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 
-const val base_url = "http://192.168.2.7:3000/"
+const val base_url = "http://192.168.2.2:3000/"
 
+lateinit var myadapter: MyAdapter
+lateinit var linearLayoutManager: LinearLayoutManager
 
 class Homesactivity : AppCompatActivity() {
 
@@ -30,9 +32,9 @@ class Homesactivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
 
-        recyclerView = binding.recycleviewHomes
+        recyclerView = binding.recycleviewhome
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
 
@@ -56,13 +58,21 @@ class Homesactivity : AppCompatActivity() {
                 val myString = StringBuilder()
 
 
-                val test1 = findViewById<TextView>(R.id.test)
+                myadapter = MyAdapter(baseContext, responseBody.homes)
+                myadapter.notifyDataSetChanged()
+                recyclerView.adapter = myadapter
+
+
+
+
+
+
+
 
                 responseBody.homes.forEach {
                     Log.d("helloooo", it.city)
 
-                    test1.append(it.id)
-                    test1.append("\n")
+
 
                 }
 

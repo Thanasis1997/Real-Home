@@ -21,6 +21,7 @@ class MyAdapter(val context: Context, val userlist: List<ResponseData.Home>) :
     class ViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView) {
 
         init {
+
             itemView.setOnClickListener{
                 listener.onItemClick(adapterPosition)
             }
@@ -42,8 +43,8 @@ class MyAdapter(val context: Context, val userlist: List<ResponseData.Home>) :
         val home = userlist[position]
         holder.perioxh.text = home.city
         holder.tm.text = home.squaremeters.toString()
-        holder.timh.text = home.price.toString()
-        // holder.thermansh.text = ??
+        holder.timh.text = home.price.toString() + "$"
+
     }
 
     override fun getItemCount(): Int {
