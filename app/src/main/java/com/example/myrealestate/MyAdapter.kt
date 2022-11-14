@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import coil.load
 
 class MyAdapter(val context: Context, val userlist: List<ResponseData.Home>) :
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
@@ -30,7 +32,10 @@ class MyAdapter(val context: Context, val userlist: List<ResponseData.Home>) :
         var perioxh: TextView = itemView.findViewById(R.id.text2)
         var tm: TextView = itemView.findViewById(R.id.text10)
         var timh: TextView = itemView.findViewById(R.id.text11)
-        var thermansh: TextView = itemView.findViewById(R.id.text12)
+        //var thermansh: TextView = itemView.findViewById(R.id.text12)
+        var image: ImageView = itemView.findViewById((R.id.image_view))
+
+
 
     }
 
@@ -44,6 +49,8 @@ class MyAdapter(val context: Context, val userlist: List<ResponseData.Home>) :
         holder.perioxh.text = home.city
         holder.tm.text = home.squaremeters.toString()
         holder.timh.text = home.price.toString() + "$"
+        holder.image.load(home.homeImage.toString())
+
 
     }
 

@@ -1,16 +1,10 @@
 package com.example.myrealestate
 
 
-import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.AttributeSet
 import android.util.Log
-import android.view.View
-import android.widget.Adapter
-import android.widget.LinearLayout
-import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myrealestate.databinding.ActivityMainBinding
@@ -70,8 +64,8 @@ class Homesactivity : AppCompatActivity() {
 
 
                 responseBody.homes.forEach {
-                    Log.d("helloooo", it.city)
 
+                    Log.i("helloooo", it.homeImage)
 
 
                 }
@@ -85,6 +79,8 @@ class Homesactivity : AppCompatActivity() {
                         //edw diaxeirizomaste ta clicks gia to kathe spiti tou recycler view.
                         //theloume na paroume to url kai na to steiloume sto epomeno fragment me ta details
                         val url = responseBody.homes[position].request.url
+                       val newactivity = Intent(this@Homesactivity, detailed_activity::class.java)
+                        startActivity(newactivity)
                         //kai edw kane to navigation px intent kai perna to url val pou eftiaksa to opoio tha einai to call sto epomeno view
                     }
                 })
