@@ -1,16 +1,16 @@
 <resources>
-    <string name="app_name">My Real Estate</string>
+    <string name="app_name">Real Home</string>
     <string-array name="countries_array">
-        <item>Αθήνα</item>
-        <item>Θεσσαλονίκη</item>
-        <item>Λάρισα</item>
-        <item>Χανιά</item>
-        <item>Βόλος</item>
-        <item>Πάτρα</item>
-        <item>Αλεξανδρούπολη</item>
-        <item>Ξάνθη</item>
-        <item>Λαμία</item>
-        <item>Ηράκλειο</item>
+        <item>Athens</item>
+        <item>Thessalonikh</item>
+        <item>Larisa</item>
+        <item>Xania</item>
+        <item>Bolos</item>
+        <item>Patra</item>
+        <item>Alexandroupolh</item>
+        <item>Ksanthi</item>
+        <item>Lamia</item>
+        <item>Hrakleio</item>
     </string-array>
 
 </resources>
