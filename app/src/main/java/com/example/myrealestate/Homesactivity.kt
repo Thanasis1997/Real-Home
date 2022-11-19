@@ -13,7 +13,7 @@ import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.logging.Logger.global
 
-const val base_url = "http://192.168.2.2:3000/"
+const val base_url = "http://192.168.2.6:3000/"
 
 lateinit var myadapter: MyAdapter
 lateinit var linearLayoutManager: LinearLayoutManager
