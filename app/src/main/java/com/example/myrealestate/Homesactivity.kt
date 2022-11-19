@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myrealestate.databinding.ActivityMainBinding
 import retrofit2.*
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.logging.Logger.global
 
 const val base_url = "http://192.168.2.2:3000/"
 
@@ -66,7 +67,8 @@ class Homesactivity : AppCompatActivity() {
             override fun onResponse(call: Call<ResponseData?>, response: Response<ResponseData?>) {
                 val responseBody = response.body()!!
                 val myString = StringBuilder()
-
+                val id = responseBody.homes[1].id
+               // Log.i("helloooo", id)
 
                 myadapter = MyAdapter(baseContext, responseBody.homes)
                 myadapter.notifyDataSetChanged()
@@ -81,7 +83,7 @@ class Homesactivity : AppCompatActivity() {
 
                 responseBody.homes.forEach {
 
-                    Log.i("helloooo", it.homeImage)
+                    Log.i("helloooo", it.request.url)
 
 
                 }
@@ -97,6 +99,8 @@ class Homesactivity : AppCompatActivity() {
                         val url = responseBody.homes[position].request.url
                        val newactivity = Intent(this@Homesactivity, detailed_activity::class.java)
                         startActivity(newactivity)
+                        newactivity.putExtra("id", id)
+
                         //kai edw kane to navigation px intent kai perna to url val pou eftiaksa to opoio tha einai to call sto epomeno view
                     }
                 })
